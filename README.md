@@ -1,4 +1,4 @@
-# GitActtivity
+# GitActivity
 
 ## Activity Title: Advanced Git Mastery with Java To-Do List Enhancements
 
