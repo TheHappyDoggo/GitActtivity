@@ -16,6 +16,7 @@ public class Task {
 		this.description = description;
 		setDeadline(deadline); // **Updated to call the new setDeadline method**
 		this.isCompleted = false;
+		
 	}
 
 	public int getId() {
