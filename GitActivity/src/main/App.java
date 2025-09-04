@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class App {
     private static TaskManager taskManager = new TaskManager();
 
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the To-Do List App!");
