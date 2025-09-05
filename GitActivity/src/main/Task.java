@@ -7,13 +7,14 @@ public class Task {
     private String description;
     private String deadline;
     private boolean isCompleted;
-    private String priority; // New attribute for task priority
+    private String priority;
 
-    public Task(String description, String priority) {
+    // Corrected constructor to include deadline
+    public Task(String description, String deadline, String priority) {
         this.id = idCounter++;
         this.description = description;
         this.deadline = deadline;
-        this.priority = priority; // Set priority
+        this.priority = priority;
         this.isCompleted = false;
     }
 
@@ -25,12 +26,16 @@ public class Task {
         return description;
     }
 
+    public String getDeadline() {
+        return deadline;
+    }
+
     public boolean isCompleted() {
         return isCompleted;
     }
 
     public String getPriority() {
-        return priority; // Getter for priority
+        return priority;
     }
 
     public void markAsCompleted() {
@@ -39,9 +44,10 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task ID: " + id + ", Description: " + description
-                + ", Completed: " + (isCompleted ? "Yes" : "No")
-                + ", Priority: " + priority; // Include priority in toString
+        return "Task ID: " + id +
+                ", Description: " + description +
+                ", Deadline: " + deadline +
+                ", Completed: " + (isCompleted ? "Yes" : "No") +
+                ", Priority: " + priority;
     }
 }
-
