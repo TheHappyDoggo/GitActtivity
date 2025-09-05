@@ -6,8 +6,10 @@ public class Task {
     private String description;
     private String deadline;
     private boolean isCompleted;
+    private String priority;
 
-  public Task(String description, LocalDate deadline, String priority) {
+    // Corrected constructor to include deadline
+    public Task(String description, String deadline, String priority) {
         this.id = idCounter++;
         this.description = description;
         this.deadline = deadline;
@@ -22,15 +24,16 @@ public class Task {
     public String getDescription() {
         return description;
     }
-  
-    public LocalDate getDeadline() {
+
+    public String getDeadline() {
         return deadline;
     }
+
     public boolean isCompleted() {
         return isCompleted;
     }
     public String getPriority() {
-        return priority; // Getter for priority
+        return priority;
     }
 
     public void markAsCompleted() {
@@ -40,11 +43,10 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task ID: " + id + 
-                + ", Description: " + description
-                + ", Deadline: " + deadline 
-                + ", Completed: " + (isCompleted ? "Yes" : "No")
-                + ", Priority: " + priority;
+        return "Task ID: " + id +
+                ", Description: " + description +
+                ", Deadline: " + deadline +
+                ", Completed: " + (isCompleted ? "Yes" : "No") +
+                ", Priority: " + priority;
     }
 }
-

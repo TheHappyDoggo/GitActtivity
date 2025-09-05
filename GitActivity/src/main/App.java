@@ -40,6 +40,7 @@ public class App {
         }
     }
 
+    
     private static void addNewTask(Scanner scanner) {
         System.out.print("Enter task description: ");
 
