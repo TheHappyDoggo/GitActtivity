@@ -1,6 +1,7 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class TaskManager {
@@ -34,5 +35,35 @@ public class TaskManager {
             }
         }
         return false;
+    }
+
+    // Sort tasks by deadline (earliest first)
+    public void sortTasksByDeadline() {
+        tasks.sort(Comparator.comparing(Task::getDeadline));
+        System.out.println("Tasks sorted by deadline!");
+    }
+
+    // Sort tasks by priority: High → Medium → Low
+    public void sortTasksByPriority() {
+        tasks.sort((t1, t2) -> {
+            int p1 = getPriorityValue(t1.getPriority());
+            int p2 = getPriorityValue(t2.getPriority());
+            return Integer.compare(p1, p2);
+        });
+        System.out.println("Tasks sorted by priority!");
+    }
+
+    // Helper method to assign numerical values to priorities
+    private int getPriorityValue(String priority) {
+        switch (priority.toLowerCase()) {
+            case "high":
+                return 1;
+            case "medium":
+                return 2;
+            case "low":
+                return 3;
+            default:
+                return 4; // Unknown priorities go last
+        }
     }
 }
