@@ -1,7 +1,6 @@
 package main;
 
-public class Task {
-
+public class Task { 
     private static int idCounter = 1;
     private int id;
     private String description;
@@ -33,13 +32,13 @@ public class Task {
     public boolean isCompleted() {
         return isCompleted;
     }
-
     public String getPriority() {
         return priority;
     }
 
     public void markAsCompleted() {
         this.isCompleted = true;
+        System.out.println("Task ID " + id + " marked as completed.");
     }
 
     @Override
